@@ -1,1 +1,44 @@
+package padrao;
 
+public class Cartabj extends Carta {
+
+	@Override
+	public String Nipe() {
+		
+		String[] nipe= new String[3];
+		nipe[0]="Copas";
+		nipe[1]="Paus";
+		nipe[2]="Ouros";
+		nipe[3]="Espadas";
+		
+		System.out.print(nipe[0]);
+		return null;
+	}
+
+	@Override
+	public String Valor() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int Pontuacao() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void Pontuacao(int pontuacao) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void exibir() {
+		// TODO Auto-generated method stub
+		
+	}
+}
+	
+	
+	
