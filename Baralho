@@ -1,23 +1,18 @@
-package com.mycompany.jogo21.base;
+package padrao;
 
 import java.util.ArrayList;
-
-/**
- *
- * @author LENOVO
- */
 public abstract class Baralho {
-    
+
     protected String[] nipes;
     protected String[] valores;
     protected ArrayList<Carta> cartas;
-    
+
     /**
      * Gerar lista de cartas
      */
     public abstract void gerarBaralho();
     /**
-     * usar método shuffle da classe Colections 
+     * usar método shuffle da classe Colections
      */
     public abstract void embaralhar();
     /**
@@ -35,7 +30,7 @@ public abstract class Baralho {
      */
     protected abstract void exibirBaralho();
     /**
-     * método interno. verifica se baralho está vazio e gera novo 
+     * método interno. verifica se baralho está vazio e gera novo
      */
     protected abstract void verificarEPreencherBaralho();
 }
