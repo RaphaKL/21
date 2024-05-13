@@ -1,1 +1,39 @@
+package padrao;
 
+import java.util.ArrayList;
+
+public class Baralhobj extends Baralho {
+
+	@Override
+	public void gerarBaralho() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void embaralhar() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Carta darCarta() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ArrayList<Carta> darCartas() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected void exibirBaralho() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void verificarEPreencherBaralho() {
+		// TODO Auto-generated method stub
