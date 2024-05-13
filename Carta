@@ -11,9 +11,9 @@ public abstract class Carta {
     protected int pontuacao;
     
 
-    public abstract String getNipe();    
-    public abstract String getValor();
-    public abstract int getPontuacao();
-    public abstract void setPontuacao(int pontuacao);    
+    public abstract String Nipe();    
+    public abstract String Valor();
+    public abstract int Pontuacao();
+    public abstract void Pontuacao(int pontuacao);    
     public abstract void exibir();
     
