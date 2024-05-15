@@ -2,7 +2,7 @@ package padrao;
 
 import java.util.ArrayList;
 
-public class Dealer {
+public class Dealer extends jogador {
     private Baralhobj baralho;
 
     public Dealer(Baralhobj baralho) {
