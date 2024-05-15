@@ -7,9 +7,9 @@ public abstract class Carta {
     protected int pontuacao;
 
 
-    public abstract String Nipe();
+    public abstract String GetNipe();
 
-    public abstract String Valor();
+    public abstract String GetValor();
 
     public abstract int Pontuacao();
 
@@ -17,13 +17,4 @@ public abstract class Carta {
 
     public abstract void exibir();
 
-	public String getNipe() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public String getValor() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }
