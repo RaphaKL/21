@@ -1,6 +1,39 @@
 package padrao;
 
-public class Player {
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
 
+public class Player extends Jogador {
+    private Scanner scanner;
+
+    public Player() {
+        this.scanner = new Scanner(System.in);
+    }
+
+    @Override
+    public void comprarCarta(Carta carta) {
+        maoJogador.add(carta);
+        numCartas++;
+    }
+
+    @Override
+    public void comprarCartas(ArrayList<Carta> cartas) {
+        maoJogador.addAll(cartas);
+        numCartas += cartas.size();
+    }
+
+    @Override
+    protected void exibirMao() {
+        System.out.println("Sua mão:");
+        for (Carta carta : maoJogador) {
+            carta.exibir();
+        }
+    }
+
+    public boolean querComprarCarta() {
+        System.out.print("Você quer mais uma carta? (s/n): ");
+        String resposta = scanner.nextLine().toLowerCase();
+        return resposta.equals("s");
+    }
 }
-
