@@ -1,17 +1,42 @@
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
+package padrao;
 
-package com.mycompany.jogo21;
-
-import com.mycompany.jogo21.base.Baralho;
-
-/**
- *
- * @author LENOVO
- */
-public class Jogo21 {
-
+public class Jogo {
     public static void main(String[] args) {
-        System.out.println("Bem vindo ao jogo de BlacjJack!");
+        // Criação do baralho e embaralhamento
+        Baralhobj baralho = new Baralhobj();
+        baralho.gerarBaralho();
+        baralho.embaralhar();
+
+        // Criação do dealer
+        Dealer dealer = new Dealer(baralho);
+
+        // Criação dos jogadores
+        Jogador jogador = new Jogador() {
+            @Override
+            public void comprarCarta(Carta carta) {
+                maoJogador.add(carta);
+                numCartas++;
+            }
+
+            @Override
+            public void comprarCartas(ArrayList<Carta> cartas) {
+                maoJogador.addAll(cartas);
+                numCartas += cartas.size();
+            }
+
+            @Override
+            protected void exibirMao() {
+                System.out.println("Sua mão:");
+                for (Carta carta : maoJogador) {
+                    carta.exibir();
+                }
+            }
+        };
+
+        // Jogador recebe duas cartas
+        dealer.darCartas(jogador);
+        jogador.exibirMao();
+
+        // Continuar o jogo...
     }
 }
