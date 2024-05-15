@@ -1,19 +1,29 @@
-package com.mycompany.jogo21.base;
+package padrao;
 
-/**
- *
- * @author LENOVO
- */
 public abstract class Carta {
-    
+
     protected String nipe;
     protected String valor;
     protected int pontuacao;
-    
 
-    public abstract String Nipe();    
+
+    public abstract String Nipe();
+
     public abstract String Valor();
+
     public abstract int Pontuacao();
-    public abstract void Pontuacao(int pontuacao);    
+
+    public abstract void Pontuacao(int pontuacao);
+
     public abstract void exibir();
-    
+
+	public String getNipe() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getValor() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}
