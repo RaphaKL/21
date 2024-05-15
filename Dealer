@@ -1,6 +1,16 @@
 package padrao;
 
+import java.util.ArrayList;
+
 public class Dealer {
+    private Baralhobj baralho;
 
+    public Dealer(Baralhobj baralho) {
+        this.baralho = baralho;
+    }
+
+    public void darCartas(Jogador jogador) {
+        ArrayList<Carta> mao = baralho.darCartas();
+        jogador.receberCartas(mao);
+    }
 }
-
