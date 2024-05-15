@@ -1,39 +1,58 @@
 package padrao;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Baralhobj extends Baralho {
 
-	@Override
-	public void gerarBaralho() {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public void gerarBaralho() {
+        for (int nipe = 0; nipe < 4; nipe++) {
+            for (String valor : Cartabj.valoresNumericos()) {
+                Cartabj carta = new Cartabj(Nipe.values()[nipe].toString(), valor);
+                cartas.add(carta);
+            }
+            for (String valor : new String[]{"Ás", "Valete", "Dama", "Rei"}) {
+                Cartabj carta = new Cartabj(Nipes.values()[nipe].toString(), valor);
+                cartas.add(carta);
+            }
+        }
+    }
 
-	@Override
-	public void embaralhar() {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public void embaralhar() {
+        Collections.shuffle(cartas);
+    }
 
-	@Override
-	public Carta darCarta() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public Carta darCarta() {
+        if (cartas.isEmpty()) {
+            return null; // Nenhum carta para dar
+        }
+        return cartas.remove(0);
+    }
 
-	@Override
-	public ArrayList<Carta> darCartas() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public ArrayList<Carta> darCartas() {
+        ArrayList<Carta> mao = new ArrayList<>();
+        for (int i = 0; i < 2; i++) {
+            mao.add(darCarta());
+        }
+        return mao;
+    }
 
-	@Override
-	protected void exibirBaralho() {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    protected void exibirBaralho() {
+        for (Carta carta : cartas) {
+            carta.exibir();
+        }
+    }
 
 	@Override
 	protected void verificarEPreencherBaralho() {
 		// TODO Auto-generated method stub
+		
+	}
+
+	}
+
