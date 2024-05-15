@@ -2,7 +2,7 @@ package padrao;
 
 import java.util.ArrayList;
 
-public class Dealer extends jogador {
+public class Dealer extends Jogador {
     private Baralhobj baralho;
 
     public Dealer(Baralhobj baralho) {
@@ -13,4 +13,22 @@ public class Dealer extends jogador {
         ArrayList<Carta> mao = baralho.darCartas();
         jogador.receberCartas(mao);
     }
+
+	@Override
+	public void comprarCarta(Carta carta) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void comprarCartas(ArrayList<Carta> cartas) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void exibirMao() {
+		// TODO Auto-generated method stub
+		
+	}
 }
