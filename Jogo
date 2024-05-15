@@ -1,42 +1,29 @@
 package padrao;
 
-public class Jogo {
-    public static void main(String[] args) {
-        // Criação do baralho e embaralhamento
-        Baralhobj baralho = new Baralhobj();
-        baralho.gerarBaralho();
-        baralho.embaralhar();
+import java.util.ArrayList;
+import java.util.Collections;
 
-        // Criação do dealer
-        Dealer dealer = new Dealer(baralho);
+public abstract class Jogador {
+    protected ArrayList<Carta> maoJogador;
+    protected int numCartas;
 
-        // Criação dos jogadores
-        Jogador jogador = new Jogador() {
-            @Override
-            public void comprarCarta(Carta carta) {
-                maoJogador.add(carta);
-                numCartas++;
-            }
+    public Jogador() {
+        this.maoJogador = new ArrayList<>();
+        this.numCartas = 0;
+    }
 
-            @Override
-            public void comprarCartas(ArrayList<Carta> cartas) {
-                maoJogador.addAll(cartas);
-                numCartas += cartas.size();
-            }
+    public abstract void comprarCarta(Carta carta);
 
-            @Override
-            protected void exibirMao() {
-                System.out.println("Sua mão:");
-                for (Carta carta : maoJogador) {
-                    carta.exibir();
-                }
-            }
-        };
+    public abstract void comprarCartas(ArrayList<Carta> cartas);
 
-        // Jogador recebe duas cartas
-        dealer.darCartas(jogador);
-        jogador.exibirMao();
+    protected abstract void exibirMao();
 
-        // Continuar o jogo...
+    public void receberCartas(ArrayList<Carta> mao) {
+        maoJogador.addAll(mao);
+        numCartas += mao.size();
+    }
+
+    protected void ordenarMao() {
+        Collections.sort(maoJogador);
     }
 }
