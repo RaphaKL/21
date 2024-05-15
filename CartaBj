@@ -2,43 +2,41 @@ package padrao;
 
 public class Cartabj extends Carta {
 
-	@Override
-	public String Nipe() {
-		
-		String[] nipe= new String[3];
-		nipe[0]="Copas";
-		nipe[1]="Paus";
-		nipe[2]="Ouros";
-		nipe[3]="Espadas";
-		
-		System.out.print(nipe[0]);
-		return null;
-	}
+    private String nipe;
+    private String valor;
 
-	@Override
-	public String Valor() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public Cartabj(String nipe, String valor) {
+        this.nipe = nipe;
+        this.valor = valor;
+    }
 
-	@Override
-	public int Pontuacao() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+    @Override
+    public String getNipe() {
+        return nipe;
+    }
 
-	@Override
-	public void Pontuacao(int pontuacao) {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public String getValor() {
+        return valor;
+    }
 
-	@Override
-	public void exibir() {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public int Pontuacao() {
+        if (valor.equals("Ás")) {
+            return 11;
+        } else if (valor.equals("Valete") || valor.equals("Dama") || valor.equals("Rei")) {
+            return 10;
+        } else {
+            return Integer.parseInt(valor);
+        }
+    }
+
+    @Override
+    public void exibir() {
+        System.out.println(valor + " de " + nipe);
+    }
+
+    public static String[] valoresNumericos() {
+        return new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+    }
 }
-	
-	
-	
